@@ -17,7 +17,7 @@
 
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from langchain.chat_models import ChatLiteLLM
+from langchain_community.chat_models import ChatLiteLLM
 
 from ConversationModel.logger import time_logger
 from ConversationModel.prompts import (HR_STAGE_ANALYZER_INCEPTION_PROMPT, SALES_AGENT_DEFAULT_INCEPTION_PROMPT)
@@ -35,8 +35,8 @@ class StageAnalyzerChain(LLMChain):
             template=stage_analyzer_inception_prompt_template,
             input_variables=[
                 "conversation_history",
-                "conversation_stage_id",
-                "conversation_stages",
+                #"conversation_stage_id", # uncomment to use the stage analyzer chain
+                #"conversation_stages", # uncomment to use the stage analyzer chain
             ],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)

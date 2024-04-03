@@ -26,7 +26,7 @@ import json
 from langchain.agents import AgentExecutor
 from langchain.chains import RetrievalQA
 from langchain.chains.base import Chain
-from langchain.chat_models import ChatLiteLLM
+from langchain_community.chat_models import ChatLiteLLM
 from langchain_core.language_models.llms import create_base_retry_decorator
 from litellm import acompletion
 from pydantic import Field
